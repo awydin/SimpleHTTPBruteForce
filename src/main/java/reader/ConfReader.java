@@ -21,7 +21,6 @@ public class ConfReader
     private String url;
     private String userFieldId;
     private String passFiledId;
-    private String submitButtonId;
     private String filePath;
     private String userName;
 
@@ -59,7 +58,6 @@ public class ConfReader
                     setUrl(eElement.getElementsByTagName("URL").item(0).getTextContent());
                     setUserFieldId(eElement.getElementsByTagName("USERNAME_FIELD_ID").item(0).getTextContent());
                     setPassFiledId(eElement.getElementsByTagName("PASSWORD_FIELD_ID").item(0).getTextContent());
-                    setSubmitButtonId(eElement.getElementsByTagName("SUBMIT_BTN_ID").item(0).getTextContent());
                     setUserName(eElement.getElementsByTagName("USERNAME").item(0).getTextContent());
                     
                    
@@ -102,15 +100,7 @@ public class ConfReader
         this.passFiledId = passFiledId;
     }
 
-    public String getSubmitButtonId()
-    {
-        return submitButtonId;
-    }
 
-    public void setSubmitButtonId(String submitButtonId)
-    {
-        this.submitButtonId = submitButtonId;
-    }
 
     public String getFilePath()
     {

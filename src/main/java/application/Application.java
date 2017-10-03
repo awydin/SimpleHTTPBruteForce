@@ -23,14 +23,14 @@ public class Application
         try
         {
             List<String> passList = FileReader.putFileContentToList(conf.getFilePath());        
-            String wrongMessage =  Login.login("?", "?", conf.getUrl(), conf.getUserFieldId(), conf.getPassFiledId(), conf.getSubmitButtonId());
+            String wrongMessage =  Login.login("?", "?", conf.getUrl(), conf.getUserFieldId(), conf.getPassFiledId());
             
             if (!passList.isEmpty())
             {
                 for (String pass : passList)
                 {
                     System.out.println("trying " + pass);
-                    String msg = Login.login(conf.getUserName(), pass, conf.getUrl(), conf.getUserFieldId(), conf.getPassFiledId(), conf.getSubmitButtonId());
+                    String msg = Login.login(conf.getUserName(), pass, conf.getUrl(), conf.getUserFieldId(), conf.getPassFiledId());
                    if(!wrongMessage.equals(msg))
                    {
                        System.out.println("password is : " + pass);

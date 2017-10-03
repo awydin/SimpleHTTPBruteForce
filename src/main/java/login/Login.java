@@ -14,7 +14,7 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 public class Login
 {
     
-    public static String login(String username, String password , String url ,String userFieldId , String passFieldId , String submitId )
+    public static String login(String username, String password , String url ,String userFieldId , String passFieldId )
     {
 
         WebDriver driver = new HtmlUnitDriver();

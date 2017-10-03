@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<FILE_PATH>/home/aydin/a.txt</FILE_PATH>
+	<URL>https://172.16.78.142:8443/oil/login</URL>
+	<USERNAME_FIELD_ID>user</USERNAME_FIELD_ID>
+	<PASSWORD_FIELD_ID>password</PASSWORD_FIELD_ID>
+	<SUBMIT_BTN_ID>wp-submit</SUBMIT_BTN_ID>
+	<USERNAME>anasrollahpour</USERNAME>
+</config>

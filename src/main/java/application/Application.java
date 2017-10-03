@@ -15,26 +15,35 @@ import reader.*;
 public class Application
 {
     
-    public static void main(String[] args) throws IOException
+    public static void main(String[] args)
     {
         
         ConfReader conf = ConfReader.getInstance();
         
-        List<String> passList = FileReader.putFileContentToList(conf.getFilePath());        
-        String wrongMessage =  Login.login("?", "?", conf.getUrl(), conf.getUserFieldId(), conf.getPassFiledId(), conf.getSubmitButtonId());
-        
-        if (!passList.isEmpty())
+        try
         {
-            for (String pass : passList)
+            List<String> passList = FileReader.putFileContentToList(conf.getFilePath());        
+            String wrongMessage =  Login.login("?", "?", conf.getUrl(), conf.getUserFieldId(), conf.getPassFiledId(), conf.getSubmitButtonId());
+            
+            if (!passList.isEmpty())
             {
-                System.out.println("trying " + pass);
-                String msg = Login.login(conf.getUserName(), pass, conf.getUrl(), conf.getUserFieldId(), conf.getPassFiledId(), conf.getSubmitButtonId());
-               if(!wrongMessage.equals(msg))
-               {
-                   System.out.println("password is : " + pass);
-                   break;
-               }
+                for (String pass : passList)
+                {
+                    System.out.println("trying " + pass);
+                    String msg = Login.login(conf.getUserName(), pass, conf.getUrl(), conf.getUserFieldId(), conf.getPassFiledId(), conf.getSubmitButtonId());
+                   if(!wrongMessage.equals(msg))
+                   {
+                       System.out.println("password is : " + pass);
+                       break;
+                   }
+                }
             }
+        }
+        catch (IOException e)
+        {
+            System.out.println("the file '" + conf.getFilePath() + "' does not exist");
+           e.printStackTrace();
+           
         }
     }
 
